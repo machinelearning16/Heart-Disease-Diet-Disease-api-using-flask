@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heart Disease Prediction</title>
+</head>
+<body>
+<h2>Please enter histology features for classification:</h2>
+
+<div tabindex="-1" class="text_cell_render rendered_html"><h2 id="4.Features-Description">Features Description<a class="anchor-link" href="#4.Features-Description">¶</a></h2>
+<p>The table below, summarizes the features information:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th style="text-align: center">Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Age</td>
+<td style="text-align: center">Age in years</td>
+</tr>
+<tr>
+<td>Sex</td>
+<td style="text-align: center">1 for male; 0 for female</td>
+</tr>
+<tr>
+<td>Chest pain type</td>
+<td style="text-align: center">Value1: typical angina. Value2: atypical angina. Value3: non-anginal pain. Vlaue4: asymptomatic</td>
+</tr>
+<tr>
+<td>Resting blood pressure</td>
+<td style="text-align: center">In mm hg on admission to the hospital</td>
+</tr>
+<tr>
+<td>Serum cholesterol</td>
+<td style="text-align: center">In mg/dI</td>
+</tr>
+<tr>
+<td>Fasting blood sugar &gt; 120 mg/dI</td>
+<td style="text-align: center">1 for true; 0 for false</td>
+</tr>
+<tr>
+<td>Resting electrocardiographic results</td>
+<td style="text-align: center">Value0: normal. Value1: having ST-T wave abnormality (T-wave inversions and/or ST elevation or depression of &gt; 0.05 mV). Value2: showing probable or definite left ventricular hypertrophy by Estes’s criteria</td>
+</tr>
+<tr>
+<td>Maximum heart rate achieved</td>
+<td style="text-align: center">centered</td>
+</tr>
+<tr>
+<td>Exercise-induced angina</td>
+<td style="text-align: center">1 for yes; 0 for no</td>
+</tr>
+<tr>
+<td>ST depression induced by exercise relative to rest</td>
+<td style="text-align: center">In mm Hg on admission to the hospital</td>
+</tr>
+<tr>
+<td>Number of major vessels</td>
+<td style="text-align: center">(0-3) colored by fluoroscopy</td>
+</tr>
+<tr>
+<td>The slope of the peak exercise ST segment</td>
+<td style="text-align: center">Value1: upsloping. Value2: flat. Value3: downsloping</td>
+</tr>
+<tr>
+<td>Thallium heart scan</td>
+<td style="text-align: center">3 for normal; 6 for fixed defect; 7 for reversible defect</td>
+</tr>
+<tr>
+<td>Diagnosis heart disease (angiographic disease)</td>
+<td style="text-align: center">Value0: no disease. Value1: heart disease</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="output_subarea output_html rendered_html output_result"><div>
+<table class="dataframe" border="1">
+  <thead>
+    <tr style="text-align: right">
+      <th></th>
+      <th>age</th>
+      <th>sex</th>
+      <th>chest_pain</th>
+      <th>blood pressure</th>
+      <th>serum_cholestoral</th>
+      <th>fasting_blood_sugar</th>
+      <th>electrocardiographic</th>
+      <th>max_heart_rate</th>
+      <th>induced_angina</th>
+      <th>ST_depression</th>
+      <th>slope</th>
+      <th>vessels</th>
+      <th>thal</th>
+      <th>diagnosis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>63.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>145.0</td>
+      <td>233.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>150.0</td>
+      <td>0.0</td>
+      <td>2.3</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>6.0</td>
+      <td>0</td>
+    </tr>
+   
+  </tbody>
+</table>
+</div></div>
+	
+	<form method= "POST" action="/heart">
+
+
+			<ul >
+
+					<li id="li_1" >
+		<label class="description" for="element_1">Age</label>
+		<div>
+			<input id="element_1" name="Age" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Sex</label>
+		<div>
+			<input id="element_2" name="Sex" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Chest Pain Type</label>
+		<div>
+			<input id="element_3" name="Chest" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">Resting blood pressure</label>
+		<div>
+			<input id="element_4" name="BP" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_5" >
+		<label class="description" for="element_5">Serum cholesterol</label>
+		<div>
+			<input id="element_5" name="Serum" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+				</li>		<li id="li_6" >
+		<label class="description" for="element_6">Fasting blood sugar > 120 mg/dI</label>
+		<div>
+			<input id="element_6" name="FBP" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_7" >
+		<label class="description" for="element_7">Resting electrocardiographic results</label>
+		<div>
+			<input id="element_7" name="ECG" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_8" >
+		<label class="description" for="element_8">Maximum heart rate achieved</label>
+		<div>
+			<input id="element_8" name="heartrate" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_9" >
+		<label class="description" for="element_9">Exercise-induced angina</label>
+		<div>
+			<input id="element_9" name="induced" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>
+		<li id="li_10" >
+		<label class="description" for="element_10">ST depression induced by exercise relative to rest</label>
+		<div>
+			<input id="element_10" name="depression" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>
+		
+		<li id="li_11" >
+		<label class="description" for="element_11">Number of major vessels</label>
+		<div>
+			<input id="element_11" name="vessels" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>
+		
+		<li id="li_12" >
+		<label class="description" for="element_12">The slope of the peak exercise ST segmen</label>
+		<div>
+			<input id="element_12" name="segmen" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>
+		
+		<li id="li_13" >
+		<label class="description" for="element_13">Thallium heart scan</label>
+		<div>
+			<input id="element_13" name="thallium" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>
+
+
+			</ul>
+
+		
+		<div>
+			<input type='submit' value='Predict' name='submit'>
+		</div>
+	</form>
+
+
+</body>
+</html>

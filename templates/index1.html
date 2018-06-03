@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Diet plan prediction</title>
+</head>
+<body>
+<h2>Please enter histology features for classification:</h2>
+	
+	<form method= "POST" action="/diet">
+
+
+			<ul >
+
+					<li id="li_1" >
+		<label class="description" for="element_1">Height(ft)</label>
+		<div>
+			<input id="element_1" name="Height1" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Height(in)</label>
+		<div>
+			<input id="element_2" name="Height2" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Weight(lbs)</label>
+		<div>
+			<input id="element_3" name="Weight" class="element text small" type="text" maxlength="255" value=""/>
+		</div>
+		</li>		
+
+
+			</ul>
+
+		
+		<div>
+			<input type='submit' value='Predict' name='submit'>
+		</div>
+	</form>
+
+
+</body>
+</html>
